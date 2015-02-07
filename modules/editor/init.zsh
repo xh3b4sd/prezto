@@ -248,8 +248,9 @@ bindkey -M vicmd "u" undo
 bindkey -M vicmd "$key_info[Control]R" redo
 
 if (( $+widgets[history-incremental-pattern-search-backward] )); then
-  bindkey -M vicmd "?" history-incremental-pattern-search-backward
-  bindkey -M vicmd "/" history-incremental-pattern-search-forward
+# bindkey -M vicmd "?" history-incremental-pattern-search-backward
+# bindkey -M vicmd "/" history-incremental-pattern-search-forward
+  bindkey -M vicmd "/" history-incremental-pattern-search-backward
 else
   bindkey -M vicmd "?" history-incremental-search-backward
   bindkey -M vicmd "/" history-incremental-search-forward
