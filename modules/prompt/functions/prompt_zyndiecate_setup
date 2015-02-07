@@ -2,9 +2,31 @@ function prompt_zyndiecate_precmd {
   git-info
 }
 
+
+
+# Show current directory name as iterm tab title
 function prompt_cwd_in_tab {
   echo -ne "\033]0;$(basename $(echo $PWD))\007"
 }
+
+
+
+# Show vi mode indicator
+function zle-line-init zle-keymap-select {
+  RPS1="%B%F{red}${${KEYMAP/vicmd/<<<}/(main|viins)/}%f%b"
+  RPS2=$RPS1
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+
+
+# Start in vi command mode
+#zle-line-init() { zle -K vicmd; }
+#zle -N zle-line-init
+
+
 
 function prompt_zyndiecate_setup {
   setopt LOCAL_OPTIONS
