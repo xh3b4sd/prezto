@@ -1,3 +1,7 @@
+#
+# custom zprezto theme
+#
+
 function prompt_zyndiecate_precmd {
   git-info
 }
@@ -8,17 +12,6 @@ function prompt_zyndiecate_precmd {
 function prompt_cwd_in_tab {
   echo -ne "\033]0;$(basename $(echo $PWD))\007"
 }
-
-
-
-# Show vi mode indicator
-function zle-line-init zle-keymap-select {
-  RPS1="%B%F{red}${${KEYMAP/vicmd/<<<}/(main|viins)/}%f%b"
-  RPS2=$RPS1
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
 
 
 
@@ -43,15 +36,15 @@ function prompt_zyndiecate_setup {
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:branch' format '%F{red}%b%f'
+  zstyle ':prezto:module:git:info:position' format '%F{red}%p%f'
   zstyle ':prezto:module:git:info:clean' format ' %F{green}✔%f'
   zstyle ':prezto:module:git:info:dirty' format ' %F{red}✗%f'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' ' %F{white}-%f $(coalesce "%b" "%p" "%c")${git_info[rprompt]}%s %F{white}-%f' \
-    'rprompt' '%C%D'
+    'prompt' ' %F{white}-%f $(coalesce "%b" "%p" "%c")%C%D %F{white}-%f'
 
   # Define prompts.
-  PROMPT='%F{green}%p%n@%M%f${(e)git_info[prompt]}%f $ '
-  RPROMPT=''
+  PROMPT='%F{green}%n@%M%f${(e)git_info[prompt]}%f $ '
+  RPROMPT='%B%F{red}${${KEYMAP/vicmd/<<<}/(main|viins)/}%f%b'
 }
 
 prompt_zyndiecate_setup "$@"
