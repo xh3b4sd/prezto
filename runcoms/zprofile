@@ -45,6 +45,8 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   /usr/local/go/{bin,sbin}
+  /home/vagrant/.nvm/*/bin
+  /home/vagrant/projects/*/
   $path
 )
 
