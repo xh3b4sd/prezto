@@ -46,8 +46,9 @@ path=(
   /usr/local/{bin,sbin}(N-/)
   /usr/local/go/{bin,sbin}(N-/)
   /home/vagrant/.nvm/*/bin(N-/)
-  /home/vagrant/projects/*/(N-/)
   /home/vagrant/go/*/(N-/)
+  /home/vagrant/projects/giantswarm/*/(N-/)
+  /home/vagrant/projects/coreos/fleet/*/(N-/)
   $path
 )
 
