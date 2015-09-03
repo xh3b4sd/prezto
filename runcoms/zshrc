@@ -17,3 +17,11 @@ fpath=(
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# Clear right prompt after each command. This prevents copying the command
+# indicator (<<<) when copying terminal output.
+setopt transientrprompt
+
+# Show command indicator (<<<) immediatelly (0.1s) after activating it (hitting
+# ESC).
+export KEYTIMEOUT=1
