@@ -10,6 +10,8 @@ fpath=(
   "$HOME/projects/giantswarm/builder/completion/zsh/"
   "$HOME/projects/giantswarm/primer/completion/zsh/"
   "$HOME/projects/giantswarm/cli/completion/zsh/"
+  "$HOME/projects/giantswarm/formica/completion/zsh/"
+  "$HOME/projects/private/anna/completion/zsh/"
   $fpath
 )
 
@@ -17,6 +19,10 @@ fpath=(
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# golang setup
+source ${HOME}/.gvm/scripts/gvm
+gvm use go1.6 > /dev/null
 
 # Clear right prompt after each command. This prevents copying the command
 # indicator (<<<) when copying terminal output.

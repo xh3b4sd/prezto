@@ -48,7 +48,9 @@ path=(
   /home/vagrant/.nvm/*/bin(N-/)
   /home/vagrant/go/*/(N-/)
   /home/vagrant/projects/giantswarm/*/(N-/)
+  /home/vagrant/projects/giantswarm/formica/formicactl/formicactl
   /home/vagrant/projects/coreos/fleet/*/(N-/)
+  /home/vagrant/projects/private/anna/.workspace/bin/(N-/)
   $path
 )
 
