@@ -12,6 +12,7 @@ fpath=(
   "$HOME/projects/giantswarm/cli/completion/zsh/"
   "$HOME/projects/giantswarm/formica/completion/zsh/"
   "$HOME/projects/private/anna/completion/zsh/"
+  "$HOME/projects/private/loader/completion/zsh/"
   $fpath
 )
 
@@ -27,6 +28,9 @@ gvm use go1.6 > /dev/null
 # Clear right prompt after each command. This prevents copying the command
 # indicator (<<<) when copying terminal output.
 setopt transientrprompt
+
+# Prevent "zsh: file exists: <file>" warnings when redirecting using >.
+setopt clobber
 
 # Show command indicator (<<<) immediatelly (0.1s) after activating it (hitting
 # ESC).
