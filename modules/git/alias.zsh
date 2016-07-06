@@ -29,6 +29,7 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 # Custom
 alias rmmerged='git branch --merged master | grep -v "master$" | xargs -r git branch -d'
 alias ga='git add'
+alias gf='~/projects/private/dotfiles/.git-finish'
 alias tree='tree --dirsfirst'
 alias gb='git branch'
 alias gc='git checkout'
